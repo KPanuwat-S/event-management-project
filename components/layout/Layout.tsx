@@ -1,10 +1,11 @@
 import MainHeader from "./MainHeader";
 
 function Layout(props: { children: JSX.Element }) {
+  const { children } = props;
   return (
     <>
       <MainHeader />
-      <main>{props.children}</main>
+      <main>{children}</main>
     </>
   );
 }

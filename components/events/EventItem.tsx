@@ -34,10 +34,13 @@ function EventItem({ id, title, image, date, location }: eventItem) {
         </div>
         <div className={classes.actions}>
           <Button link={exploreLink}>
-            <span>Explore Event</span>
-            <span className={classes.icon}>
-              <ArrowRightIcon></ArrowRightIcon>
-            </span>
+            <>
+              {" "}
+              <span>Explore Event</span>
+              <span className={classes.icon}>
+                <ArrowRightIcon></ArrowRightIcon>
+              </span>
+            </>
           </Button>
         </div>
       </div>

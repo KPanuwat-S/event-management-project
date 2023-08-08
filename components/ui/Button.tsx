@@ -1,13 +1,24 @@
 import Link from "next/link";
 import classes from "./Button.module.css";
 
-function Button(props: { link: string; children: any }) {
-  const { link, children } = props;
+interface Prop {
+  link?: string;
+  children: JSX.Element;
+  onClick?: () => void;
+}
 
+function Button({ link, children, onClick }: Prop) {
+  if (link) {
+    return (
+      <Link href={link} className={classes.btn}>
+        <span>{children}</span>
+      </Link>
+    );
+  }
   return (
-    <Link href={link} className={classes.btn}>
-      <span>{children}</span>
-    </Link>
+    <button className={classes.btn} onClick={onClick}>
+      {children}
+    </button>
   );
 }
 
